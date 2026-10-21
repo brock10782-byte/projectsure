@@ -1,0 +1,1802 @@
+/* ===================================================================
+   100% CUSTOMIZABLE LOVE WEBSITE - ULTRA-PREMIUM ROMANTIC DESIGN SYSTEM
+   =================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@500;700&family=Dancing+Script:wght@600;700&family=Outfit:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap');
+
+:root {
+  --font-main: 'Outfit', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  --font-hand: 'Caveat', cursive;
+  --font-script: 'Dancing Script', cursive;
+
+  /* Harmonious Romantic Palette */
+  --bg-primary: #fff5f7;
+  --bg-secondary: #fef0f3;
+  --bg-cream: #fffdfa;
+  
+  --primary-pink: #ff6b8b;
+  --primary-pink-hover: #ff4770;
+  --soft-pink: #ffd7e2;
+  --light-pink: #fff0f5;
+  --blush: #fcedf1;
+  --rose-accent: #e63968;
+  
+  --gift-blue: #93c8f8;
+  --gift-blue-dark: #70b3f5;
+  --ribbon-pink: #ff94af;
+  
+  --text-dark: #3a1e28;
+  --text-muted: #825b6a;
+  --text-light: #ab8695;
+  
+  --glass-bg: rgba(255, 255, 255, 0.78);
+  --glass-border: rgba(255, 255, 255, 0.9);
+  --glass-shadow: 0 16px 40px rgba(230, 90, 130, 0.12);
+  
+  --radius-sm: 12px;
+  --radius-md: 20px;
+  --radius-lg: 32px;
+  --radius-full: 9999px;
+
+  --transition-smooth: all 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
+  --transition-fast: all 0.2s ease;
+}
+
+/* Base Reset */
+*, *::before, *::after {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+}
+
+body {
+  font-family: var(--font-main);
+  background-color: #f7ebe8;
+  background-image: 
+    radial-gradient(#ffd4df 1px, transparent 1px),
+    radial-gradient(#fcdce5 1px, #f7ecea 1px);
+  background-size: 40px 40px;
+  background-position: 0 0, 20px 20px;
+  color: var(--text-dark);
+  min-height: 100vh;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: flex-start;
+  position: relative;
+}
+
+/* Floating Particles (Hearts & Petals) */
+#particle-canvas {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Top Navigation Bar / Showcase Banner */
+.showcase-header {
+  width: 100%;
+  max-width: 1300px;
+  padding: 18px 24px 8px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  z-index: 20;
+}
+
+.banner-badge {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1px solid rgba(255, 180, 200, 0.4);
+  padding: 8px 26px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 20px rgba(255, 107, 139, 0.12);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  margin: 0 auto;
+}
+
+.banner-badge h1 {
+  font-family: var(--font-script);
+  font-size: 2.1rem;
+  font-weight: 700;
+  color: #7d394b;
+  letter-spacing: 0.5px;
+  line-height: 1.1;
+  text-shadow: 0 1px 2px rgba(255, 255, 255, 0.8);
+}
+
+.top-controls {
+  position: fixed;
+  top: 20px;
+  right: 24px;
+  display: flex;
+  gap: 12px;
+  z-index: 50;
+}
+
+.icon-btn {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(10px);
+  border: 1.5px solid rgba(255, 182, 193, 0.6);
+  color: var(--text-dark);
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.25rem;
+  box-shadow: 0 4px 15px rgba(230, 90, 130, 0.15);
+  transition: var(--transition-fast);
+}
+
+.icon-btn:hover {
+  transform: scale(1.08) translateY(-2px);
+  background: #ffffff;
+  color: var(--rose-accent);
+  box-shadow: 0 6px 20px rgba(230, 90, 130, 0.25);
+}
+
+.icon-btn.playing {
+  animation: pulse-spin 3s linear infinite;
+  color: var(--rose-accent);
+}
+
+@keyframes pulse-spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Background Aesthetics & Watercolor Floral Decorations */
+.deco-flower {
+  position: fixed;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.85;
+  filter: drop-shadow(0 8px 16px rgba(180, 120, 130, 0.15));
+  transition: opacity 0.5s ease;
+}
+
+.deco-left-top {
+  top: 40px;
+  left: 30px;
+  width: 140px;
+}
+
+.deco-right-top {
+  top: 25px;
+  right: 40px;
+  width: 160px;
+}
+
+.deco-heart {
+  position: fixed;
+  pointer-events: none;
+  z-index: 2;
+  opacity: 0.6;
+}
+
+.deco-heart-left {
+  top: 180px;
+  left: 45px;
+  width: 90px;
+  transform: rotate(-15deg);
+  animation: float-gentle 4s ease-in-out infinite alternate;
+}
+
+.deco-heart-right {
+  top: 360px;
+  right: 45px;
+  width: 105px;
+  transform: rotate(12deg);
+  animation: float-gentle 4.5s ease-in-out infinite alternate 1s;
+}
+
+@keyframes float-gentle {
+  0% { transform: translateY(0) rotate(-10deg); }
+  100% { transform: translateY(-16px) rotate(-4deg); }
+}
+
+/* Showcase Monitor Frame Container */
+.stage-wrapper {
+  position: relative;
+  z-index: 10;
+  width: 100%;
+  max-width: 1100px;
+  padding: 10px 20px 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+/* Authentic Desktop Screen Frame */
+.monitor-frame {
+  width: 100%;
+  background: #ffffff;
+  border-radius: 28px;
+  border: 10px solid #1a1a1a;
+  box-shadow: 
+    0 25px 60px -10px rgba(150, 60, 80, 0.28),
+    0 0 0 2px #333333,
+    0 0 0 5px rgba(255, 180, 200, 0.4);
+  overflow: hidden;
+  position: relative;
+  min-height: 640px;
+  display: flex;
+  flex-direction: column;
+  background: linear-gradient(135deg, #fff7f9 0%, #ffedf2 50%, #fff4f7 100%);
+  transition: all 0.4s ease;
+}
+
+/* Monitor Camera dot & Top Bezel detail */
+.monitor-frame::before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 6px;
+  height: 6px;
+  background: #444;
+  border-radius: 50%;
+  z-index: 30;
+}
+
+/* Monitor Stand Base (shown in desktop showcase mode) */
+.monitor-stand {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+  margin-top: -2px;
+  z-index: 5;
+}
+
+.monitor-neck {
+  width: 110px;
+  height: 65px;
+  background: linear-gradient(to right, #cfcfcf, #ececec, #b8b8b8);
+  border-radius: 0 0 8px 8px;
+  box-shadow: inset 0 -4px 8px rgba(0, 0, 0, 0.15);
+}
+
+.monitor-base {
+  width: 250px;
+  height: 18px;
+  background: linear-gradient(to right, #e2e2e2, #ffffff, #dcdcdc);
+  border-radius: 12px 12px 4px 4px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+}
+
+/* Fullscreen Immersion Mode Toggle */
+body.fullscreen-mode .monitor-frame {
+  max-width: 100%;
+  border: none;
+  border-radius: 0;
+  box-shadow: none;
+  min-height: 100vh;
+}
+body.fullscreen-mode .monitor-stand,
+body.fullscreen-mode .showcase-header,
+body.fullscreen-mode .feature-badges {
+  display: none !important;
+}
+body.fullscreen-mode .stage-wrapper {
+  padding: 0;
+  max-width: 100%;
+}
+
+/* Screen Navigation Header inside Monitor */
+.screen-nav-bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 16px 28px;
+  background: rgba(255, 255, 255, 0.65);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(255, 200, 215, 0.4);
+  position: relative;
+  z-index: 15;
+}
+
+.screen-brand {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: var(--font-serif);
+  font-weight: 600;
+  font-size: 1.15rem;
+  color: #723447;
+}
+
+.screen-brand span {
+  font-size: 1.3rem;
+}
+
+.screen-actions {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.nav-pill-btn {
+  background: linear-gradient(135deg, #ffffff 0%, #ffe9ef 100%);
+  border: 1.5px solid #ffb8cb;
+  color: #723447;
+  padding: 7px 18px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-main);
+  font-size: 0.92rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(255, 120, 150, 0.15);
+  transition: var(--transition-fast);
+}
+
+.nav-pill-btn:hover {
+  background: linear-gradient(135deg, #ff6b8b 0%, #ff4d6d 100%);
+  color: #ffffff;
+  border-color: #ff4d6d;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 18px rgba(255, 77, 109, 0.3);
+}
+
+.nav-pill-btn.secondary {
+  background: rgba(255, 255, 255, 0.5);
+  border-color: #f3cbd5;
+  color: #946172;
+}
+
+.nav-pill-btn.secondary:hover {
+  background: #ffffff;
+  color: #723447;
+}
+
+/* Screen Transitions */
+.screen-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  padding: 24px;
+}
+
+.screen {
+  display: none;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  width: 100%;
+  animation: screen-fade-in 0.5s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}
+
+.screen.active {
+  display: flex;
+}
+
+@keyframes screen-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(12px) scale(0.98);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* ===================================================================
+   SCREEN 1: PASSCODE / SECRET CODE SCREEN (Image 5 clone)
+   =================================================================== */
+
+.passcode-layout {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 50px;
+  width: 100%;
+  max-width: 900px;
+  margin: auto;
+  padding: 20px 10px;
+}
+
+/* Left Photo Frames */
+.passcode-visual {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+
+.heart-frames-wrapper {
+  display: flex;
+  gap: 16px;
+  position: relative;
+  align-items: center;
+}
+
+.heart-frame-box {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  padding: 8px;
+  background: #ffffff;
+  border-radius: 50% 50% 50% 50% / 60% 60% 40% 40%;
+  box-shadow: 
+    0 10px 25px rgba(255, 110, 140, 0.22),
+    0 0 0 4px #ffe2ea,
+    0 0 0 8px #ffffff;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.heart-frame-box:hover {
+  transform: scale(1.05) rotate(-3deg);
+}
+
+.heart-frame-box:nth-child(2) {
+  transform: translateY(15px);
+}
+.heart-frame-box:nth-child(2):hover {
+  transform: translateY(15px) scale(1.05) rotate(3deg);
+}
+
+.heart-frame-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: inherit;
+  transition: transform 0.5s ease;
+}
+
+.heart-frame-box:hover img {
+  transform: scale(1.08);
+}
+
+.heart-lace-border {
+  position: absolute;
+  inset: 0;
+  border: 2px dashed #ffb3c6;
+  border-radius: inherit;
+  pointer-events: none;
+}
+
+.frames-tagline {
+  margin-top: 28px;
+  font-family: var(--font-hand);
+  font-size: 1.45rem;
+  font-weight: 700;
+  color: #8c4357;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 6px 18px;
+  border-radius: var(--radius-full);
+  box-shadow: 0 4px 12px rgba(255, 140, 170, 0.12);
+}
+
+/* Right Keypad Column */
+.passcode-card {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(14px);
+  border: 1.5px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 36px rgba(240, 120, 150, 0.18);
+  border-radius: 30px;
+  padding: 30px 34px 26px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 330px;
+  position: relative;
+}
+
+.ribbon-title-wrap {
+  text-align: center;
+  margin-bottom: 18px;
+  position: relative;
+}
+
+.ribbon-title-wrap .sub-ribbon {
+  font-family: var(--font-script);
+  font-size: 1.75rem;
+  color: #ff547b;
+  font-weight: 700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;
+}
+
+.ribbon-title-wrap .sub-hint {
+  font-size: 0.82rem;
+  color: var(--text-muted);
+  margin-top: 4px;
+}
+
+/* Pin Input Dots Indicator */
+.pin-display-dots {
+  display: flex;
+  gap: 16px;
+  margin-bottom: 22px;
+}
+
+.pin-dot {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  border: 2px solid #ff9ebb;
+  background: #ffffff;
+  transition: all 0.25s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+}
+
+.pin-dot.filled {
+  background: linear-gradient(135deg, #ff547b, #ff7597);
+  border-color: #ff547b;
+  transform: scale(1.2);
+  box-shadow: 0 0 12px rgba(255, 84, 123, 0.5);
+}
+
+.pin-dot.error {
+  background: #ff4757;
+  border-color: #ff4757;
+  animation: shake 0.4s ease;
+}
+
+@keyframes shake {
+  0%, 100% { transform: translateX(0); }
+  25% { transform: translateX(-6px); }
+  75% { transform: translateX(6px); }
+}
+
+/* Numeric Keypad */
+.keypad-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 14px;
+  width: 100%;
+}
+
+.key-btn {
+  background: linear-gradient(180deg, #ffffff 0%, #fff2f5 100%);
+  border: 1.5px solid #ffd6e0;
+  border-radius: 20px;
+  height: 58px;
+  font-family: var(--font-main);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: #633241;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  box-shadow: 0 4px 10px rgba(230, 110, 140, 0.12);
+  transition: all 0.18s ease;
+  user-select: none;
+}
+
+.key-btn:hover {
+  background: linear-gradient(180deg, #ffeef3 0%, #ffdbe4 100%);
+  border-color: #ffb8cb;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 14px rgba(230, 110, 140, 0.22);
+}
+
+.key-btn:active {
+  transform: translateY(1px) scale(0.95);
+  box-shadow: 0 2px 4px rgba(230, 110, 140, 0.15);
+}
+
+.key-btn.action-btn {
+  font-size: 1.15rem;
+  background: #fff8fa;
+  color: #ff547b;
+}
+
+.key-btn.hint-btn {
+  color: #e63968;
+}
+
+/* Toast Notification for Passcode Feedback */
+.keypad-toast {
+  margin-top: 14px;
+  font-size: 0.85rem;
+  color: #8c4357;
+  text-align: center;
+  min-height: 20px;
+  font-weight: 500;
+  transition: opacity 0.3s ease;
+}
+
+/* ===================================================================
+   SCREEN 2: TULIPS BOUQUET & STORY CLOUDS (Image 1 clone)
+   =================================================================== */
+
+.tulips-page-wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.tulips-header-title {
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.tulips-header-title h2 {
+  font-family: var(--font-serif);
+  font-size: 2.3rem;
+  font-weight: 700;
+  color: #6a2b3d;
+  letter-spacing: -0.5px;
+}
+
+.tulips-header-title p {
+  font-family: var(--font-hand);
+  font-size: 1.4rem;
+  color: #9e556b;
+  margin-top: 2px;
+}
+
+/* Center Layout: Bouquet in center, speech cards on sides */
+.tulips-stage {
+  position: relative;
+  width: 100%;
+  min-height: 480px;
+  display: grid;
+  grid-template-columns: 1fr 1.3fr 1fr;
+  align-items: center;
+  gap: 20px;
+  padding: 10px 0;
+}
+
+.tulip-bubbles-col {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+  z-index: 5;
+}
+
+/* Cute Message Cloud Cards (exact match to screenshot 1) */
+.story-cloud-card {
+  background: rgba(255, 255, 255, 0.88);
+  backdrop-filter: blur(12px);
+  border: 1.5px solid #ffccd8;
+  border-radius: 22px;
+  padding: 14px 20px;
+  box-shadow: 
+    0 10px 24px rgba(255, 120, 150, 0.12),
+    inset 0 0 0 1px rgba(255, 255, 255, 0.8);
+  font-family: var(--font-main);
+  font-size: 0.96rem;
+  font-weight: 500;
+  color: #632e3e;
+  line-height: 1.4;
+  position: relative;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.story-cloud-card:hover {
+  transform: scale(1.05) translateY(-4px);
+  border-color: #ff85a2;
+  box-shadow: 0 14px 30px rgba(255, 90, 130, 0.22);
+  background: #ffffff;
+}
+
+.story-cloud-card .card-icon {
+  font-size: 1.3rem;
+  flex-shrink: 0;
+}
+
+/* Scalloped / Vintage Frame around Bouquet (matching screenshot 1) */
+.tulip-centerpiece-wrap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.scalloped-frame {
+  width: 290px;
+  height: 380px;
+  background: #fff8fa;
+  border: 3px solid #ffccd9;
+  border-radius: 40px;
+  box-shadow: 
+    0 18px 45px rgba(230, 90, 130, 0.16),
+    inset 0 0 20px rgba(255, 180, 200, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 14px;
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.4s ease;
+  cursor: pointer;
+}
+
+.scalloped-frame:hover {
+  transform: scale(1.03);
+}
+
+.scalloped-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 30px;
+  animation: bouquet-float 5s ease-in-out infinite alternate;
+}
+
+@keyframes bouquet-float {
+  0% { transform: translateY(0) rotate(0deg); }
+  50% { transform: translateY(-8px) rotate(1deg); }
+  100% { transform: translateY(0) rotate(0deg); }
+}
+
+.tulip-tagline-pill {
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid #ffd1dd;
+  padding: 6px 20px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-hand);
+  font-size: 1.35rem;
+  font-weight: 700;
+  color: #ff547b;
+  box-shadow: 0 4px 12px rgba(255, 120, 150, 0.12);
+}
+
+/* ===================================================================
+   SCREEN 3: A LETTER FROM MY HEART (Image 3 clone)
+   =================================================================== */
+
+.letter-page-wrapper {
+  width: 100%;
+  max-width: 860px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.letter-title {
+  text-align: center;
+  margin-bottom: 16px;
+}
+
+.letter-title h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #632837;
+}
+
+/* Vintage / Romantic Paper Parchment */
+.parchment-sheet {
+  width: 100%;
+  background: #fffcf8;
+  background-image: 
+    radial-gradient(#ebd9c8 0.75px, transparent 0.75px),
+    linear-gradient(rgba(240, 218, 224, 0.25) 1px, transparent 1px);
+  background-size: 24px 24px, 100% 32px;
+  border: 2px solid #ecd8cf;
+  border-radius: 24px;
+  padding: 38px 46px 42px;
+  box-shadow: 
+    0 20px 48px rgba(180, 100, 120, 0.14),
+    inset 0 0 60px rgba(255, 240, 230, 0.8);
+  position: relative;
+  overflow: visible;
+}
+
+/* Sweet Little Decorative Floral sprig top right */
+.letter-decor-flower {
+  position: absolute;
+  top: 16px;
+  right: 24px;
+  font-size: 2rem;
+  opacity: 0.7;
+}
+
+.letter-content {
+  font-family: var(--font-serif);
+  font-size: 1.08rem;
+  line-height: 1.85;
+  color: #44222c;
+  max-width: 650px;
+}
+
+.letter-content p {
+  margin-bottom: 16px;
+  text-indent: 1.5em;
+}
+
+.letter-content .letter-salutation {
+  font-family: var(--font-hand);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #8c3b52;
+  text-indent: 0;
+  margin-bottom: 12px;
+}
+
+.letter-content .letter-highlight {
+  background: rgba(255, 215, 226, 0.45);
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-weight: 600;
+  color: #9c2847;
+}
+
+.letter-signoff {
+  margin-top: 24px;
+  text-align: right;
+  font-family: var(--font-script);
+  font-size: 1.85rem;
+  font-weight: 700;
+  color: #9c2847;
+}
+
+/* Cute Chibi Cat Holding Heart in bottom corner (matching screenshot 3) */
+.letter-cat-sticker {
+  position: absolute;
+  bottom: -20px;
+  left: 20px;
+  width: 140px;
+  height: 140px;
+  z-index: 10;
+  filter: drop-shadow(0 10px 18px rgba(180, 80, 100, 0.25));
+  transition: transform 0.3s ease;
+  cursor: pointer;
+}
+
+.letter-cat-sticker:hover {
+  transform: scale(1.1) rotate(-4deg);
+}
+
+.letter-cat-sticker img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+/* ===================================================================
+   SCREEN 4: A PLAYLIST MADE FOR YOU (Image 4 clone)
+   =================================================================== */
+
+.playlist-page-wrapper {
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.playlist-header-title {
+  text-align: center;
+  margin-bottom: 24px;
+}
+
+.playlist-header-title h2 {
+  font-family: var(--font-serif);
+  font-size: 2.2rem;
+  font-weight: 700;
+  color: #632636;
+}
+
+.playlist-header-title p {
+  font-family: var(--font-hand);
+  font-size: 1.4rem;
+  color: #9e556b;
+  margin-top: 2px;
+}
+
+.playlist-player-stage {
+  display: grid;
+  grid-template-columns: 1fr 1.1fr;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.7);
+  backdrop-filter: blur(14px);
+  border: 2px solid #ffd4e0;
+  border-radius: 36px;
+  padding: 34px 40px;
+  box-shadow: 0 20px 50px rgba(230, 90, 130, 0.15);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Floating Music Notes Animation */
+.music-notes-flow {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  overflow: hidden;
+}
+
+.flying-note {
+  position: absolute;
+  color: rgba(255, 107, 139, 0.45);
+  font-size: 1.5rem;
+  animation: float-note 6s linear infinite;
+}
+
+@keyframes float-note {
+  0% {
+    transform: translateY(120%) rotate(0deg) scale(0.8);
+    opacity: 0;
+  }
+  20% { opacity: 0.8; }
+  80% { opacity: 0.8; }
+  100% {
+    transform: translateY(-40px) rotate(40deg) scale(1.3);
+    opacity: 0;
+  }
+}
+
+/* Spotify Style Music Card */
+.music-card {
+  background: #ffffff;
+  border: 1px solid #ffe2ea;
+  border-radius: 26px;
+  padding: 22px;
+  box-shadow: 0 12px 30px rgba(220, 100, 130, 0.14);
+  display: flex;
+  flex-direction: column;
+}
+
+.album-cover-box {
+  width: 100%;
+  aspect-ratio: 1;
+  border-radius: 18px;
+  overflow: hidden;
+  position: relative;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+  margin-bottom: 16px;
+}
+
+.album-cover-box img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.5s ease;
+}
+
+.music-card:hover .album-cover-box img {
+  transform: scale(1.05);
+}
+
+.track-info-row {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 14px;
+}
+
+.track-meta h4 {
+  font-family: var(--font-main);
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: #4a212f;
+}
+
+.track-meta p {
+  font-size: 0.88rem;
+  color: #8c5b6b;
+  margin-top: 2px;
+}
+
+.heart-like-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.4rem;
+  cursor: pointer;
+  color: #ff4770;
+  transition: transform 0.2s ease;
+}
+
+.heart-like-btn:hover {
+  transform: scale(1.25);
+}
+
+/* Audio Timeline Scrubber */
+.timeline-bar-wrap {
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.progress-track {
+  width: 100%;
+  height: 6px;
+  background: #ffe0e8;
+  border-radius: var(--radius-full);
+  overflow: hidden;
+  cursor: pointer;
+  position: relative;
+}
+
+.progress-fill {
+  height: 100%;
+  width: 35%;
+  background: linear-gradient(90deg, #ff7597, #ff4d6d);
+  border-radius: var(--radius-full);
+  transition: width 0.3s ease;
+}
+
+.time-stamps {
+  display: flex;
+  justify-content: space-between;
+  font-size: 0.75rem;
+  color: #9c6c7b;
+  margin-top: 6px;
+}
+
+/* Playback Control Buttons */
+.playback-controls {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 20px;
+}
+
+.ctrl-btn {
+  background: transparent;
+  border: none;
+  font-size: 1.3rem;
+  color: #632e3e;
+  cursor: pointer;
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.ctrl-btn:hover {
+  background: #fff0f5;
+  color: #ff4d6d;
+}
+
+.ctrl-btn.play-master-btn {
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, #ff6b8b, #ff4770);
+  color: #ffffff;
+  font-size: 1.35rem;
+  box-shadow: 0 6px 18px rgba(255, 71, 112, 0.4);
+}
+
+.ctrl-btn.play-master-btn:hover {
+  transform: scale(1.08);
+  box-shadow: 0 8px 22px rgba(255, 71, 112, 0.5);
+}
+
+/* Center Realistic Vinyl Turntable */
+.vinyl-deck {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.vinyl-disc {
+  width: 250px;
+  height: 250px;
+  border-radius: 50%;
+  background: 
+    radial-gradient(circle at center, #222 0%, #151515 25%, #2a2a2a 35%, #151515 50%, #2a2a2a 65%, #111 100%);
+  box-shadow: 
+    0 15px 35px rgba(0, 0, 0, 0.35),
+    0 0 0 4px #2b2b2b,
+    0 0 25px rgba(255, 107, 139, 0.25);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  transition: transform 0.5s ease;
+}
+
+/* Grooves styling */
+.vinyl-disc::before {
+  content: '';
+  position: absolute;
+  inset: 12px;
+  border-radius: 50%;
+  border: 1px dashed rgba(255, 255, 255, 0.12);
+  box-shadow: inset 0 0 0 8px rgba(0, 0, 0, 0.4);
+}
+
+.vinyl-disc.spinning {
+  animation: spin-vinyl 4s linear infinite;
+}
+
+@keyframes spin-vinyl {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+.vinyl-center-label {
+  width: 86px;
+  height: 86px;
+  border-radius: 50%;
+  overflow: hidden;
+  border: 3px solid #ffccd8;
+  position: relative;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+.vinyl-center-label img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.vinyl-spindle {
+  position: absolute;
+  width: 14px;
+  height: 14px;
+  background: #ffffff;
+  border-radius: 50%;
+  box-shadow: inset 0 2px 4px rgba(0, 0, 0, 0.4);
+}
+
+/* ===================================================================
+   SCREEN 5: YOU UNLOCKED IT - 3 SURPRISE GIFTS (Image 2 clone)
+   =================================================================== */
+
+.gifts-page-wrapper {
+  width: 100%;
+  max-width: 960px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.gifts-header-title {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.gifts-header-title h2 {
+  font-family: var(--font-serif);
+  font-size: 2.4rem;
+  font-weight: 700;
+  color: #632636;
+}
+
+.gifts-header-title p {
+  font-family: var(--font-hand);
+  font-size: 1.45rem;
+  color: #ff547b;
+  font-weight: 700;
+  margin-top: 4px;
+}
+
+/* 3 Gift Boxes Row (exact clone of screenshot 2) */
+.gifts-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 32px;
+  width: 100%;
+  margin-bottom: 24px;
+}
+
+.gift-box-item {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  position: relative;
+}
+
+.gift-box-visual {
+  width: 180px;
+  height: 180px;
+  position: relative;
+  transition: all 0.4s cubic-bezier(0.34, 1.56, 0.64, 1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.gift-box-visual img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  filter: drop-shadow(0 14px 25px rgba(147, 200, 248, 0.35));
+  transition: transform 0.35s ease;
+}
+
+.gift-box-item:hover .gift-box-visual {
+  transform: translateY(-10px) scale(1.08);
+}
+
+.gift-box-item:hover .gift-box-visual img {
+  animation: gift-wiggle 0.6s ease infinite alternate;
+}
+
+@keyframes gift-wiggle {
+  0% { transform: rotate(-3deg); }
+  100% { transform: rotate(3deg); }
+}
+
+.gift-number-pill {
+  margin-top: 14px;
+  background: rgba(255, 255, 255, 0.95);
+  border: 1.5px solid #ffccd9;
+  padding: 6px 20px;
+  border-radius: var(--radius-full);
+  font-size: 0.92rem;
+  font-weight: 600;
+  color: #632e3e;
+  box-shadow: 0 4px 12px rgba(255, 120, 150, 0.12);
+  transition: var(--transition-fast);
+}
+
+.gift-box-item:hover .gift-number-pill {
+  background: #ff547b;
+  color: #ffffff;
+  border-color: #ff547b;
+}
+
+.gift-box-item.opened .gift-number-pill {
+  background: #8bd39a;
+  color: #ffffff;
+  border-color: #8bd39a;
+}
+
+.gift-title-row {
+  margin-top: 12px;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.gift-badge-icon {
+  font-size: 1.35rem;
+}
+
+.gift-main-title {
+  font-family: var(--font-serif);
+  font-size: 1.18rem;
+  font-weight: 700;
+  color: #5a2432;
+  transition: color 0.2s ease;
+}
+
+.gift-box-item:hover .gift-main-title {
+  color: #ff4770;
+}
+
+/* Sub-header on each opened gift page */
+.screen-sub-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 22px;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
+.back-to-gifts-btn {
+  background: linear-gradient(135deg, #ffffff 0%, #fff0f5 100%);
+  border: 1.5px solid #ff9ebb;
+  color: #723447;
+  padding: 9px 24px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  box-shadow: 0 4px 14px rgba(255, 120, 150, 0.18);
+  transition: var(--transition-fast);
+}
+
+.back-to-gifts-btn:hover {
+  background: linear-gradient(135deg, #ff6b8b, #ff4770);
+  color: #ffffff;
+  border-color: #ff4770;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px rgba(255, 71, 112, 0.35);
+}
+
+.nav-next-gift-btn {
+  background: rgba(255, 255, 255, 0.85);
+  border: 1px solid #ffd1dd;
+  color: #8c4357;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: var(--transition-fast);
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+}
+
+.nav-next-gift-btn:hover {
+  background: #ffffff;
+  color: #ff4770;
+  border-color: #ff9ebb;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(255, 120, 150, 0.15);
+}
+
+/* Extra reunion badges row */
+.reunion-extras-row {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 14px;
+  flex-wrap: wrap;
+  margin-top: 32px;
+  width: 100%;
+}
+
+.extra-pill-btn {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(8px);
+  border: 1.2px solid #ffccd9;
+  padding: 8px 20px;
+  border-radius: var(--radius-full);
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #6a2e3f;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
+  box-shadow: 0 4px 12px rgba(255, 120, 150, 0.1);
+  transition: var(--transition-fast);
+}
+
+.extra-pill-btn:hover {
+  background: #ffffff;
+  color: #ff4770;
+  border-color: #ff85a2;
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(255, 71, 112, 0.2);
+}
+
+
+/* ===================================================================
+   MODAL DIALOGS (Revealed Surprises & Customizer)
+   =================================================================== */
+
+.modal-backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(40, 15, 25, 0.45);
+  backdrop-filter: blur(8px);
+  z-index: 100;
+  display: none;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  animation: modal-fade 0.3s ease forwards;
+}
+
+.modal-backdrop.active {
+  display: flex;
+}
+
+@keyframes modal-fade {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+
+.modal-sheet {
+  background: #ffffff;
+  border-radius: 30px;
+  max-width: 600px;
+  width: 100%;
+  max-height: 88vh;
+  overflow-y: auto;
+  padding: 34px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+  border: 2px solid #ffd4e0;
+  position: relative;
+  animation: modal-pop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1) forwards;
+}
+
+@keyframes modal-pop {
+  from { transform: scale(0.85); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 20px;
+  background: #fff0f5;
+  border: 1px solid #ffd1dd;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  font-size: 1.1rem;
+  color: #723447;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: var(--transition-fast);
+}
+
+.modal-close-btn:hover {
+  background: #ff547b;
+  color: #ffffff;
+}
+
+/* Surprise 1: The Reunion Chat Log & Polaroids */
+.chat-mockup-wrapper {
+  background: #f7f7f9;
+  border: 1px solid #e5e5ea;
+  border-radius: 24px;
+  padding: 20px;
+  margin: 18px 0;
+}
+
+.chat-date-pill {
+  text-align: center;
+  font-size: 0.78rem;
+  color: #8e8e93;
+  margin-bottom: 14px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.chat-bubble {
+  max-width: 78%;
+  padding: 12px 16px;
+  border-radius: 18px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+  margin-bottom: 10px;
+  position: relative;
+}
+
+.chat-bubble.them {
+  background: #e9e9eb;
+  color: #000000;
+  border-bottom-left-radius: 4px;
+  margin-right: auto;
+}
+
+.chat-bubble.me {
+  background: linear-gradient(135deg, #ff6b8b, #ff4770);
+  color: #ffffff;
+  border-bottom-right-radius: 4px;
+  margin-left: auto;
+}
+
+.chat-time {
+  font-size: 0.7rem;
+  opacity: 0.7;
+  margin-top: 4px;
+  text-align: right;
+}
+
+/* Surprise 2: Love Coupons Grid */
+.coupons-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin: 20px 0;
+}
+
+.love-coupon-card {
+  background: linear-gradient(135deg, #fff7f9 0%, #ffeef3 100%);
+  border: 2px dashed #ff9ebb;
+  border-radius: 18px;
+  padding: 16px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: transform 0.25s ease;
+  cursor: pointer;
+}
+
+.love-coupon-card:hover {
+  transform: translateY(-3px) scale(1.02);
+}
+
+.coupon-badge {
+  font-size: 1.4rem;
+  margin-bottom: 6px;
+}
+
+.coupon-title {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #632636;
+}
+
+.coupon-desc {
+  font-size: 0.82rem;
+  color: #8c5868;
+  margin: 4px 0 10px;
+}
+
+.coupon-redeem-btn {
+  background: #ffffff;
+  border: 1.5px solid #ff9ebb;
+  color: #ff547b;
+  font-size: 0.78rem;
+  font-weight: 700;
+  padding: 5px 12px;
+  border-radius: var(--radius-full);
+  cursor: pointer;
+  align-self: flex-start;
+  transition: var(--transition-fast);
+}
+
+.coupon-redeem-btn:hover {
+  background: #ff547b;
+  color: #ffffff;
+}
+
+.love-coupon-card.redeemed {
+  opacity: 0.7;
+}
+
+.love-coupon-card.redeemed::after {
+  content: 'REDEEMED ❤️';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) rotate(-15deg);
+  font-family: var(--font-main);
+  font-weight: 900;
+  font-size: 1.2rem;
+  color: #e63946;
+  border: 3px solid #e63946;
+  padding: 4px 12px;
+  border-radius: 8px;
+  pointer-events: none;
+}
+
+/* Surprise 3: Certificate / Eternal Promise */
+.certificate-sheet {
+  background: #fffdf9;
+  border: 3px double #d4af37;
+  border-radius: 20px;
+  padding: 28px;
+  text-align: center;
+  position: relative;
+  box-shadow: inset 0 0 30px rgba(212, 175, 55, 0.15);
+}
+
+.cert-seal {
+  width: 60px;
+  height: 60px;
+  background: radial-gradient(circle, #e63946, #9c1523);
+  border-radius: 50%;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  margin: 0 auto 12px;
+  box-shadow: 0 4px 15px rgba(230, 57, 70, 0.4);
+}
+
+/* ===================================================================
+   CUSTOMIZER DRAWER (100% Customizable Website)
+   =================================================================== */
+
+.customizer-drawer {
+  position: fixed;
+  top: 0;
+  right: -420px;
+  width: 400px;
+  max-width: 90vw;
+  height: 100vh;
+  background: #ffffff;
+  box-shadow: -10px 0 40px rgba(0, 0, 0, 0.18);
+  z-index: 120;
+  transition: right 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  padding: 30px 26px;
+  display: flex;
+  flex-direction: column;
+  overflow-y: auto;
+}
+
+.customizer-drawer.open {
+  right: 0;
+}
+
+.customizer-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.customizer-header h3 {
+  font-family: var(--font-serif);
+  font-size: 1.45rem;
+  color: #632636;
+}
+
+.form-group {
+  margin-bottom: 18px;
+}
+
+.form-group label {
+  display: block;
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: #632e3e;
+  margin-bottom: 6px;
+}
+
+.form-control {
+  width: 100%;
+  padding: 10px 14px;
+  border: 1.5px solid #ffd4e0;
+  border-radius: 12px;
+  font-family: var(--font-main);
+  font-size: 0.95rem;
+  color: var(--text-dark);
+  background: #fffbfa;
+  outline: none;
+  transition: border-color 0.2s ease;
+}
+
+.form-control:focus {
+  border-color: #ff6b8b;
+  background: #ffffff;
+}
+
+textarea.form-control {
+  resize: vertical;
+  min-height: 110px;
+}
+
+.btn-primary-action {
+  width: 100%;
+  background: linear-gradient(135deg, #ff6b8b, #ff4770);
+  border: none;
+  color: #ffffff;
+  padding: 12px;
+  border-radius: var(--radius-full);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  box-shadow: 0 6px 18px rgba(255, 71, 112, 0.35);
+  transition: var(--transition-fast);
+  margin-top: 10px;
+}
+
+.btn-primary-action:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 24px rgba(255, 71, 112, 0.45);
+}
+
+/* Feature Badges Footer (matching screenshot banner icons) */
+.feature-badges {
+  margin-top: 25px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 36px;
+  width: 100%;
+  max-width: 900px;
+  border-top: 1px solid rgba(255, 180, 200, 0.4);
+  padding-top: 20px;
+}
+
+.badge-item {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.badge-circle {
+  width: 38px;
+  height: 38px;
+  border-radius: 50%;
+  background: #ffffff;
+  border: 1px solid #ffd1dd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.1rem;
+  color: #ff547b;
+  box-shadow: 0 4px 10px rgba(255, 120, 150, 0.12);
+}
+
+.badge-text {
+  font-size: 0.8rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  color: #723447;
+  letter-spacing: 0.6px;
+  line-height: 1.2;
+}
+
+/* Bottom Pink Ribbon */
+.bottom-ribbon {
+  margin-top: 18px;
+  background: linear-gradient(90deg, transparent, #ffe4ec 20%, #ffe4ec 80%, transparent);
+  padding: 8px 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  font-family: var(--font-main);
+  font-size: 0.88rem;
+  font-weight: 700;
+  color: #8c4357;
+  letter-spacing: 1px;
+}
+
+/* Responsive adjustments */
+@media (max-width: 860px) {
+  .passcode-layout {
+    flex-direction: column;
+    gap: 25px;
+  }
+  .tulips-stage {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .tulip-centerpiece-wrap {
+    order: -1;
+  }
+  .playlist-player-stage {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+  .gifts-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+  .coupons-grid {
+    grid-template-columns: 1fr;
+  }
+  .feature-badges {
+    flex-wrap: wrap;
+    gap: 16px;
+  }
+  .banner-badge h1 {
+    font-size: 1.6rem;
+  }
+}
