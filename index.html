@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Our 1 Year Reunion Anniversary 💖 | 22nd October</title>
+  <meta name="description" content="A romantic interactive love website celebrating our one-year reunion anniversary since the text on October 22nd.">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>💖</text></svg>">
+</head>
+<body>
+
+  <!-- Floating Particles Canvas (Rose petals & Hearts) -->
+  <canvas id="particle-canvas"></canvas>
+
+  <!-- Top Floating Controls -->
+  <div class="top-controls">
+    <button class="icon-btn" id="top-music-btn" title="Toggle Romantic Music">🎵</button>
+    <button class="icon-btn" id="open-customizer-btn" title="Customize Website Details">⚙️</button>
+    <button class="icon-btn" id="toggle-frame-mode-btn" title="Toggle Frame / Fullscreen Mode">🖥️</button>
+  </div>
+
+  <!-- Showcase Header Banner (Matching exact screenshot title) -->
+  <header class="showcase-header">
+    <div class="banner-badge">
+      <h1>100% Customizable Love Website</h1>
+    </div>
+  </header>
+
+  <!-- Main Stage Wrapper (Desktop Monitor Showcase) -->
+  <main class="stage-wrapper">
+    <div class="monitor-frame">
+
+      <!-- Monitor Top Internal Navigation Bar -->
+      <nav class="screen-nav-bar" aria-label="Website Navigation">
+        <div class="screen-brand">
+          <span>💌</span>
+          <p id="nav-brand-title">Our Story &bull; <strong class="data-reunion-date">22nd October</strong></p>
+        </div>
+        <div class="screen-actions" id="nav-screen-actions">
+          <button type="button" class="nav-pill-btn secondary" id="nav-back-gifts-btn" style="display: none;">🎁 Back to Gifts</button>
+        </div>
+      </nav>
+
+      <!-- Screen Container -->
+      <div class="screen-container">
+
+        <!-- ==========================================
+             SCREEN 1: PASSCODE SCREEN (Image 5 clone)
+             ========================================== -->
+        <section class="screen active" id="screen-passcode" aria-labelledby="secret-code-heading">
+          <div class="passcode-layout">
+            
+            <!-- Left Side: Heart Picture Frames -->
+            <div class="passcode-visual">
+              <div class="heart-frames-wrapper">
+                <div class="heart-frame-box" title="Us Together">
+                  <img src="assets/images/couple_portraits.jpg" alt="Romantic couple portrait" loading="lazy">
+                  <div class="heart-lace-border"></div>
+                </div>
+                <div class="heart-frame-box" title="Our Love">
+                  <img src="assets/images/couple_portraits.jpg" alt="Our sweet memory" style="object-position: right top;" loading="lazy">
+                  <div class="heart-lace-border"></div>
+                </div>
+              </div>
+              <div class="frames-tagline">
+                <span>🎀</span>
+                <span class="data-reunion-date">22nd October</span> Reunion
+                <span>🎀</span>
+              </div>
+            </div>
+
+            <!-- Right Side: Keypad & Pin Entry -->
+            <div class="passcode-card">
+              <div class="ribbon-title-wrap">
+                <h2 id="secret-code-heading" class="sub-ribbon">Enter our secret code 💖</h2>
+                <p class="sub-hint">The date a single text brought us back together ✨</p>
+              </div>
+
+              <!-- Pin Dots -->
+              <div class="pin-display-dots" id="pin-dots">
+                <div class="pin-dot"></div>
+                <div class="pin-dot"></div>
+                <div class="pin-dot"></div>
+                <div class="pin-dot"></div>
+              </div>
+
+              <!-- Keypad -->
+              <div class="keypad-grid">
+                <button type="button" class="key-btn" data-val="1">1</button>
+                <button type="button" class="key-btn" data-val="2">2</button>
+                <button type="button" class="key-btn" data-val="3">3</button>
+
+                <button type="button" class="key-btn" data-val="4">4</button>
+                <button type="button" class="key-btn" data-val="5">5</button>
+                <button type="button" class="key-btn" data-val="6">6</button>
+
+                <button type="button" class="key-btn" data-val="7">7</button>
+                <button type="button" class="key-btn" data-val="8">8</button>
+                <button type="button" class="key-btn" data-val="9">9</button>
+
+                <button type="button" class="key-btn action-btn hint-btn" data-val="hint" title="Get Hint">💖</button>
+                <button type="button" class="key-btn" data-val="0">0</button>
+                <button type="button" class="key-btn action-btn" data-val="back" title="Delete">⌫</button>
+              </div>
+
+              <div class="keypad-toast" id="keypad-toast">Enter our reunion code (2210) 💌</div>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 2: YOU UNLOCKED IT - 3 GIFTS HUB (Image 2 clone)
+             ========================================== -->
+        <section class="screen" id="screen-gifts" aria-labelledby="unlocked-heading">
+          <div class="gifts-page-wrapper">
+            <div class="gifts-header-title">
+              <h2 id="unlocked-heading">You unlocked it 🎉</h2>
+              <p>Your surprises are waiting for you (Tap any gift to open)</p>
+            </div>
+
+            <!-- 3 Gift Boxes (One for Tulips, One for Letter, One for Playlist) -->
+            <div class="gifts-grid">
+              
+              <!-- Gift 1: Tulips Bouquet -->
+              <div class="gift-box-item" id="gift-card-tulips" data-target="screen-tulips">
+                <div class="gift-box-visual">
+                  <img src="assets/images/gift_box.jpg" alt="Baby blue gift box for tulips" loading="lazy">
+                </div>
+                <div class="gift-title-row">
+                  <span class="gift-badge-icon">🌷</span>
+                  <span class="gift-main-title">Your Favorite Tulips</span>
+                </div>
+                <div class="gift-number-pill" id="badge-gift-tulips">Tap to Open 🎀</div>
+              </div>
+
+              <!-- Gift 2: Love Letter -->
+              <div class="gift-box-item" id="gift-card-letter" data-target="screen-letter">
+                <div class="gift-box-visual">
+                  <img src="assets/images/gift_box.jpg" alt="Baby blue gift box for love letter" loading="lazy">
+                </div>
+                <div class="gift-title-row">
+                  <span class="gift-badge-icon">💌</span>
+                  <span class="gift-main-title">A Letter From My Heart</span>
+                </div>
+                <div class="gift-number-pill" id="badge-gift-letter">Tap to Open 🎀</div>
+              </div>
+
+              <!-- Gift 3: Playlist & Song -->
+              <div class="gift-box-item" id="gift-card-playlist" data-target="screen-playlist">
+                <div class="gift-box-visual">
+                  <img src="assets/images/gift_box.jpg" alt="Baby blue gift box for playlist" loading="lazy">
+                </div>
+                <div class="gift-title-row">
+                  <span class="gift-badge-icon">🎶</span>
+                  <span class="gift-main-title">A Playlist Made For You</span>
+                </div>
+                <div class="gift-number-pill" id="badge-gift-playlist">Tap to Open 🎀</div>
+              </div>
+
+            </div>
+
+            <!-- Extra Cute Reunion Bonus Buttons -->
+            <div class="reunion-extras-row">
+              <button type="button" class="extra-pill-btn" id="open-text-mockup-btn">
+                <span>📱</span> View The 22nd Oct Reunion Text
+              </button>
+              <button type="button" class="extra-pill-btn" id="open-coupons-btn">
+                <span>🎟️</span> Open Love Coupons
+              </button>
+              <button type="button" class="extra-pill-btn" id="open-certificate-btn">
+                <span>📜</span> Forever Promise Certificate
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 3: TULIPS BOUQUET & STORY (Image 1 clone)
+             ========================================== -->
+        <section class="screen" id="screen-tulips" aria-labelledby="tulips-heading">
+          <div class="tulips-page-wrapper">
+            
+            <div class="screen-sub-header">
+              <button type="button" class="back-to-gifts-btn" data-action="back-to-gifts">
+                <span>🎁</span> Back to Gifts
+              </button>
+              <div class="tulips-header-title">
+                <h2 id="tulips-heading">Your Favorite Tulips</h2>
+                <p>One year reunited &bull; Started with a simple text 🌷</p>
+              </div>
+              <button type="button" class="nav-next-gift-btn" data-target="screen-letter">
+                Next: Letter 💌 ➔
+              </button>
+            </div>
+
+            <div class="tulips-stage">
+              <!-- Left Story Clouds -->
+              <div class="tulip-bubbles-col">
+                <div class="story-cloud-card" title="Click me!">
+                  <span class="card-icon">🌸</span>
+                  <span>You make my heart bloom every single day.</span>
+                </div>
+                <div class="story-cloud-card" title="Click me!">
+                  <span class="card-icon">💭</span>
+                  <span>When we stopped talking, life felt so quiet and incomplete.</span>
+                </div>
+                <div class="story-cloud-card" title="Click me!">
+                  <span class="card-icon">✨</span>
+                  <span>Then on <strong>22nd October</strong>, one text changed everything.</span>
+                </div>
+              </div>
+
+              <!-- Centerpiece Bouquet -->
+              <div class="tulip-centerpiece-wrap">
+                <div class="scalloped-frame" id="interactive-tulips" title="Tap the tulips!">
+                  <img src="assets/images/tulip_bouquet.jpg" alt="Lush bouquet of pink tulips with love tag" loading="lazy">
+                </div>
+                <div class="tulip-tagline-pill">With all my love &hearts;</div>
+              </div>
+
+              <!-- Right Story Clouds -->
+              <div class="tulip-bubbles-col">
+                <div class="story-cloud-card" title="Click me!">
+                  <span class="card-icon">🤍</span>
+                  <span>I choose you every day, in every lifetime.</span>
+                </div>
+                <div class="story-cloud-card" title="Click me!">
+                  <span class="card-icon">🌷</span>
+                  <span>My love for you keeps growing more and more.</span>
+                </div>
+                <div class="story-cloud-card" title="Click me!">
+                  <span class="card-icon">💌</span>
+                  <span>My heart will always choose you. Forever.</span>
+                </div>
+              </div>
+            </div>
+
+            <div style="margin-top: 20px;">
+              <button type="button" class="back-to-gifts-btn" data-action="back-to-gifts">
+                <span>🎁</span> Return to All Surprises
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 4: A LETTER FROM MY HEART (Image 3 clone)
+             ========================================== -->
+        <section class="screen" id="screen-letter" aria-labelledby="letter-heading">
+          <div class="letter-page-wrapper">
+            
+            <div class="screen-sub-header">
+              <button type="button" class="back-to-gifts-btn" data-action="back-to-gifts">
+                <span>🎁</span> Back to Gifts
+              </button>
+              <div class="letter-title">
+                <h2 id="letter-heading">A Letter From My Heart</h2>
+              </div>
+              <button type="button" class="nav-next-gift-btn" data-target="screen-playlist">
+                Next: Playlist 🎶 ➔
+              </button>
+            </div>
+
+            <article class="parchment-sheet">
+              <span class="letter-decor-flower">🌸</span>
+
+              <div class="letter-content">
+                <p class="letter-salutation">Dear <span class="data-partner-name">My Love</span>,</p>
+                <div id="letter-body-paragraphs">
+                  <p>Looking back, the time we stopped talking felt like a chapter that was missing its colors. The world kept turning, but it was so quiet without your laugh, your voice, and your presence.</p>
+                  <p>And then came <span class="letter-highlight">October 22nd</span>.</p>
+                  <p>A single text notification lit up my phone. Just a few simple words, yet it felt like our entire universe restarted in an instant. That one text brought us back together and opened the door to the most beautiful year of my life.</p>
+                  <p>Today marks our one-year reunion anniversary since that day. Over the past 365 days, you've made me smile on my hardest days, made me feel safe, and reminded me what true love really feels like.</p>
+                  <p>Thank you for being you, for answering that text, and for giving us this second chance. No matter what happens or where life takes us, my heart will always choose you.</p>
+                </div>
+                <div class="letter-signoff">
+                  Always, forever ❤️<br>
+                  <span class="data-sender-name">Forever Yours</span>
+                </div>
+              </div>
+
+              <!-- Cute Chibi Cat Holding Heart (Exact matching sticker from screenshot 3) -->
+              <div class="letter-cat-sticker" id="letter-cat" title="Purr purr! I love you!">
+                <img src="assets/images/cute_cat_heart.jpg" alt="Cute kitten holding heart" loading="lazy">
+              </div>
+            </article>
+
+            <div style="margin-top: 24px;">
+              <button type="button" class="back-to-gifts-btn" data-action="back-to-gifts">
+                <span>🎁</span> Return to All Surprises
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+        <!-- ==========================================
+             SCREEN 5: A PLAYLIST MADE FOR YOU (Image 4 clone)
+             ========================================== -->
+        <section class="screen" id="screen-playlist" aria-labelledby="playlist-heading">
+          <div class="playlist-page-wrapper">
+            
+            <div class="screen-sub-header">
+              <button type="button" class="back-to-gifts-btn" data-action="back-to-gifts">
+                <span>🎁</span> Back to Gifts
+              </button>
+              <div class="playlist-header-title">
+                <h2 id="playlist-heading">A Playlist Made For You</h2>
+                <p>Songs that somehow sound like us 🎵</p>
+              </div>
+              <button type="button" class="nav-next-gift-btn" data-target="screen-tulips">
+                View Tulips 🌷 ➔
+              </button>
+            </div>
+
+            <div class="playlist-player-stage">
+              <!-- Floating Musical Notes -->
+              <div class="music-notes-flow">
+                <span class="flying-note" style="left: 10%; animation-delay: 0s;">♪</span>
+                <span class="flying-note" style="left: 30%; animation-delay: 1.5s;">♫</span>
+                <span class="flying-note" style="left: 55%; animation-delay: 3s;">♩</span>
+                <span class="flying-note" style="left: 75%; animation-delay: 2s;">♬</span>
+                <span class="flying-note" style="left: 88%; animation-delay: 4s;">♪</span>
+              </div>
+
+              <!-- Spotify Style Music Card -->
+              <div class="music-card">
+                <div class="album-cover-box">
+                  <img src="assets/images/music_album_cover.jpg" alt="Dreamy watercolor album cover" id="music-cover-img" loading="lazy">
+                </div>
+
+                <div class="track-info-row">
+                  <div class="track-meta">
+                    <h4 id="track-title">Reunited on 22nd Oct</h4>
+                    <p id="track-artist">Lover &bull; Acoustic Lofi Melody</p>
+                  </div>
+                  <button type="button" class="heart-like-btn" id="heart-like-btn" title="Like Song">🤍</button>
+                </div>
+
+                <!-- Timeline Scrubber -->
+                <div class="timeline-bar-wrap">
+                  <div class="progress-track" id="music-progress-bar">
+                    <div class="progress-fill" id="music-progress-fill"></div>
+                  </div>
+                  <div class="time-stamps">
+                    <span id="music-current-time">0:00</span>
+                    <span id="music-total-time">3:34</span>
+                  </div>
+                </div>
+
+                <!-- Playback Controls -->
+                <div class="playback-controls">
+                  <button type="button" class="ctrl-btn" id="upload-song-btn" title="Play your own song (MP3)">📁</button>
+                  <input type="file" id="custom-song-upload" accept="audio/*" style="display: none;">
+                  <button type="button" class="ctrl-btn play-master-btn" id="master-play-btn" title="Play / Pause">▶</button>
+                  <button type="button" class="ctrl-btn" id="music-vol-btn" title="Romantic Melody">💖</button>
+                </div>
+              </div>
+
+              <!-- Center Realistic Spinning Vinyl Turntable -->
+              <div class="vinyl-deck">
+                <div class="vinyl-disc" id="vinyl-disc" title="Tap to Play/Pause vinyl record!">
+                  <div class="vinyl-center-label">
+                    <img src="assets/images/couple_portraits.jpg" alt="Center vinyl couple photo" loading="lazy">
+                  </div>
+                  <div class="vinyl-spindle"></div>
+                </div>
+                <div class="tulip-tagline-pill" style="margin-top: 20px;">Spinning Our Melody 🎶</div>
+              </div>
+
+            </div>
+
+            <div style="margin-top: 24px;">
+              <button type="button" class="back-to-gifts-btn" data-action="back-to-gifts">
+                <span>🎁</span> Return to All Surprises
+              </button>
+            </div>
+
+          </div>
+        </section>
+
+      </div><!-- End screen-container -->
+
+    </div><!-- End monitor-frame -->
+
+    <!-- Monitor Desktop Stand (matching showcase aesthetics) -->
+    <div class="monitor-stand">
+      <div class="monitor-neck"></div>
+      <div class="monitor-base"></div>
+    </div>
+
+    <!-- Feature Badges Footer (exact match to screenshot banner) -->
+    <footer class="feature-badges">
+      <div class="badge-item">
+        <div class="badge-circle">✏️</div>
+        <div class="badge-text">Fully<br>Customizable</div>
+      </div>
+      <div class="badge-item">
+        <div class="badge-circle">☁️</div>
+        <div class="badge-text">Instant<br>Access</div>
+      </div>
+      <div class="badge-item">
+        <div class="badge-circle">📄</div>
+        <div class="badge-text">Easy Instructions<br>Included</div>
+      </div>
+    </footer>
+
+    <!-- Bottom Ribbon -->
+    <div class="bottom-ribbon">
+      <span>♥</span> PREVIEW AVAILABLE IN DESCRIPTION <span>♥</span>
+    </div>
+
+  </main>
+
+  <!-- ==========================================
+       MODALS FOR GIFTS & SURPRISES
+       ========================================== -->
+
+  <!-- Modal 1: The Reunion Text -->
+  <div class="modal-backdrop" id="modal-gift-reunion-text">
+    <div class="modal-sheet">
+      <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #632636; text-align: center;">The Text That Changed Everything</h3>
+      <p style="text-align: center; font-size: 0.9rem; color: #8c5868; margin-top: 4px;">October 22nd &bull; 10:22 PM</p>
+
+      <div class="chat-mockup-wrapper">
+        <div class="chat-date-pill">22 October &bull; Reunion Day</div>
+        
+        <div class="chat-bubble them">
+          <p id="chat-msg-them">Hey... I know it's been a while, but I couldn't stop thinking about you.</p>
+          <div class="chat-time">10:22 PM &bull; Delivered</div>
+        </div>
+
+        <div class="chat-bubble me">
+          <p id="chat-msg-me">I missed you so much. I'm so glad you texted.</p>
+          <div class="chat-time">10:23 PM &bull; Read</div>
+        </div>
+      </div>
+
+      <div style="background: #fff5f8; border-radius: 16px; padding: 18px; text-align: center; border: 1px dashed #ff9ebb;">
+        <p style="font-family: var(--font-hand); font-size: 1.45rem; color: #722d40; font-weight: 700;">
+          "A simple notification that brought my favorite person back into my world."
+        </p>
+        <p style="font-size: 0.88rem; color: #9c6c7b; margin-top: 6px;">Happy 1 Year of Us Talking Again! ❤️</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: Love Coupons -->
+  <div class="modal-backdrop" id="modal-gift-coupons">
+    <div class="modal-sheet">
+      <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <h3 style="font-family: var(--font-serif); font-size: 1.8rem; color: #632636; text-align: center;">Love Coupons For You</h3>
+      <p style="text-align: center; font-size: 0.9rem; color: #8c5868; margin-top: 4px;">Tap any coupon to redeem it anytime!</p>
+
+      <div class="coupons-grid">
+        <div class="love-coupon-card">
+          <div class="coupon-badge">🫂</div>
+          <div class="coupon-title">Unlimited Hugs Pass</div>
+          <div class="coupon-desc">Valid for as many tight, warm cuddles as you ever need.</div>
+          <button type="button" class="coupon-redeem-btn">Redeem Now</button>
+        </div>
+
+        <div class="love-coupon-card">
+          <div class="coupon-badge">🚗</div>
+          <div class="coupon-title">Late Night Drive & Food</div>
+          <div class="coupon-desc">Good music, peaceful empty roads, and your favorite snacks.</div>
+          <button type="button" class="coupon-redeem-btn">Redeem Now</button>
+        </div>
+
+        <div class="love-coupon-card">
+          <div class="coupon-badge">👑</div>
+          <div class="coupon-title">You Win Any Argument</div>
+          <div class="coupon-desc">Play this card anytime and you are instantly 100% right.</div>
+          <button type="button" class="coupon-redeem-btn">Redeem Now</button>
+        </div>
+
+        <div class="love-coupon-card">
+          <div class="coupon-badge">🍿</div>
+          <div class="coupon-title">Movie Night of Your Choice</div>
+          <div class="coupon-desc">Any movie, no complaints, and all the popcorn you want.</div>
+          <button type="button" class="coupon-redeem-btn">Redeem Now</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Anniversary Forever Certificate -->
+  <div class="modal-backdrop" id="modal-gift-certificate">
+    <div class="modal-sheet">
+      <button type="button" class="modal-close-btn" aria-label="Close modal">&times;</button>
+      <div class="certificate-sheet">
+        <div class="cert-seal">📜</div>
+        <h3 style="font-family: var(--font-serif); font-size: 1.9rem; color: #8b2b41; margin-bottom: 8px;">Certificate of Eternal Love</h3>
+        <p style="font-size: 0.88rem; text-transform: uppercase; letter-spacing: 1.5px; color: #9c6c7b; margin-bottom: 16px;">One Year Reunion Edition</p>
+        
+        <p style="font-family: var(--font-serif); font-size: 1.05rem; line-height: 1.7; color: #40232c; margin-bottom: 18px;">
+          This certifies that since that fateful text on <strong class="data-reunion-date">22nd October</strong>, 
+          <span class="data-partner-name" style="font-weight: 700; color: #ff4770;">My Love</span> has officially stolen my heart for another 365 consecutive days.
+        </p>
+
+        <p style="font-family: var(--font-hand); font-size: 1.5rem; color: #9c2847; font-weight: 700;">
+          "I promise to always listen, always cherish you, and never let you go again."
+        </p>
+
+        <div style="margin-top: 24px; border-top: 1px solid #ffd4e0; padding-top: 14px; display: flex; justify-content: space-between; font-size: 0.85rem; color: #723447;">
+          <div>Date: <strong class="data-reunion-date">22nd October</strong></div>
+          <div>Signed: <strong class="data-sender-name">Forever Yours</strong> ❤️</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+  <!-- ==========================================
+       CUSTOMIZER DRAWER (100% Customizable Website)
+       ========================================== -->
+  <aside class="customizer-drawer" id="customizer-drawer" aria-labelledby="customizer-heading">
+    <div class="customizer-header">
+      <h3 id="customizer-heading">Personalize Website</h3>
+      <button type="button" class="modal-close-btn" id="close-customizer-btn" aria-label="Close customizer">&times;</button>
+    </div>
+
+    <p style="font-size: 0.85rem; color: var(--text-muted); margin-bottom: 18px;">
+      Customize any detail below to make this website 100% unique to your reunion story.
+    </p>
+
+    <div class="form-group">
+      <label for="input-partner-name">Partner's Name / Nickname</label>
+      <input type="text" id="input-partner-name" class="form-control" value="My Love">
+    </div>
+
+    <div class="form-group">
+      <label for="input-sender-name">Your Name</label>
+      <input type="text" id="input-sender-name" class="form-control" value="Forever Yours">
+    </div>
+
+    <div class="form-group">
+      <label for="input-passcode">Secret Passcode (4 Digits)</label>
+      <input type="text" id="input-passcode" class="form-control" maxlength="4" value="2210" placeholder="e.g. 2210">
+      <small style="color: #9c6c7b; font-size: 0.78rem;">Default: 2210 (22nd October)</small>
+    </div>
+
+    <div class="form-group">
+      <label for="input-anniversary-date">Reunion Date</label>
+      <input type="text" id="input-anniversary-date" class="form-control" value="22nd October">
+    </div>
+
+    <div class="form-group">
+      <label for="input-chat-them">Text That Reconnected You (Their Text)</label>
+      <input type="text" id="input-chat-them" class="form-control" value="Hey... I know it's been a while, but I couldn't stop thinking about you.">
+    </div>
+
+    <div class="form-group">
+      <label for="input-chat-me">Your Reply Text</label>
+      <input type="text" id="input-chat-me" class="form-control" value="I missed you so much. I'm so glad you texted.">
+    </div>
+
+    <div class="form-group">
+      <label for="input-letter-body">Love Letter Message</label>
+      <textarea id="input-letter-body" class="form-control" rows="8"></textarea>
+    </div>
+
+    <button type="button" class="btn-primary-action" id="save-custom-btn">Save & Apply Changes ✨</button>
+  </aside>
+
+  <!-- Scripts -->
+  <script src="js/audio.js"></script>
+  <script src="js/script.js"></script>
+</body>
+</html>

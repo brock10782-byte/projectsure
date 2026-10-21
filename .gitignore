@@ -1,0 +1,16 @@
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Archives & Backups
+*.zip
+*.tar.gz
+*.rar
+*.bak
+
+# Logs & Temporary files
+*.log
+.system_generated/
+__pycache__/
+*.pyc
